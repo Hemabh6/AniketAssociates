@@ -1,11 +1,5 @@
 {
-  "targets": {
-    "empleados-bccc9": {
-      "hosting": {
-        "empleados": [
-          "empleados-bccc9"
-        ]
-      }
-    }
+  "projects": {
+    "default": "empleados-a7792"
   }
 }
