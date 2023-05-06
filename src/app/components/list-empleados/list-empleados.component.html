@@ -1,10 +1,10 @@
-<div class="container mt-4">
-    <div class="card">
-        <div class="card-body">
+<div class="container mt-4" style="max-width: 1500px!important;">
+    <div >
+        <div >
             <span class="h3">GST Client List</span>
             <button class="btn btn-dark btn-lg float-right" routerLink="/create-empleado">Add</button>
             <h5 style="margin-top: 30px;" *ngIf="empleados.length == 0">No client data found</h5>
-            <table *ngIf="empleados.length > 0" class="table table-striped mt-5">
+            <table *ngIf="empleados.length > 0" class="table table-striped mt-5" style="max-width: 1500px!important;overflow-y: auto;">
                 <thead>
                   <tr>
                     <th>Firm Name</th>
