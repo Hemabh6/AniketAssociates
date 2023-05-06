@@ -1,0 +1,46 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">GST Client List</span>
+            <button class="btn btn-dark btn-lg float-right" routerLink="/create-empleado">Add</button>
+            <h5 style="margin-top: 30px;" *ngIf="empleados.length == 0">No client data found</h5>
+            <table *ngIf="empleados.length > 0" class="table table-striped mt-5">
+                <thead>
+                  <tr>
+                    <th>Firm Name</th>
+                    <th>Business</th>
+                    <th>GST</th>
+                    <th>Position</th>
+                    <th>User Id</th>
+                    <th>User Password</th>
+                    <th>Email Id</th>
+                    <th>Email Password</th>
+                    <th>EVC / DSC</th>
+                    <th>Contact No.</th>
+                    <th>Frequency</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let empleado of empleados">
+                    <td>{{ empleado.firmname }}</td>
+                    <td>{{ empleado.business }}</td>
+                    <td>{{ empleado.gst }}</td>
+                    <td>{{ empleado.prop }}</td>
+                    <td>{{empleado.userId}}</td>
+                    <td>{{empleado.userPassword}}</td>
+                    <td>{{empleado.emailId}}</td>
+                    <td>{{empleado.emailPass}}</td>
+                    <td>{{empleado.evc}}</td>
+                    <td>{{empleado.mobile}}</td>
+                    <td>{{empleado.frequency}}</td>
+                    <td>
+                      <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/editEmpleado/', empleado.id]"></i>
+                      <i *ngIf="empleado.IsActive" (click)="deleteClient(empleado.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
